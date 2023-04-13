@@ -1,9 +1,10 @@
 import { CartSlice } from "./Slices/cartSlice";
 
-const Store = configureStore (
+export const Store = configureStore (
     {
         reducer:{
             cart : CartSlice,
         }
     }
 )
+
