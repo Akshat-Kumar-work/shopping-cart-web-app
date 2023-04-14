@@ -2,10 +2,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Spinner from "../components/Spinner"
 import Product from "../components/Product"
+
+
 const Home = () => {
   const API_URL = "https://fakestoreapi.com/products";
   const [loading , setLoading] = useState(false);
   const [posts , setPosts] = useState([])
+
 
   async function fetchdata (){
     setLoading(true)
@@ -26,8 +29,8 @@ const Home = () => {
   return (<div>
     {
       loading ?  (<Spinner></Spinner>): (posts.length > 0 ? ( <div> {
-        posts.map ( ( post)=>{
-        <Product key={post.id} post={post}></Product>
+        posts.map( (post)=>{
+        return <Product key={post.id} post={post}/>
       })
       } </div>) : ( <div> <p> no data found</p></div>) )
     }
