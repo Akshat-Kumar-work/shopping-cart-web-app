@@ -4,6 +4,7 @@ export const CartSlice = createSlice({
     name:"cart",
     initialState:[],
     reducers:{
+        //passing current state and action in parameter
         add:(state,action)=>{
             state.push(action.payload);
         },

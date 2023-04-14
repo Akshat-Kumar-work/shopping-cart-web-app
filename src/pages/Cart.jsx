@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
+  //slice fetch karli 
   const {cart} = useSelector( (state)=> state);
+
   const [totalAmount , setTotalAmount] = useState(0);
 
   useEffect ( () => {
@@ -15,6 +17,8 @@ const Cart = () => {
  
   return (<div>
     {
+      //agar current state m , cart ki length 0 se bdi hai toh mtlb usme , items added hai , map function lgao har ek cart k lie jo har ek item dega
+      //aur unn item ko as a prop pass krdo cartItem m , jo show krega item ko 
       cart.length > 0 ? (<div>
 
      <div>  { cart.map ( (item , index)=>{ return(<CartItem key={item.id} item={item} itemIndex={index }></CartItem>)})} </div>
@@ -22,6 +26,7 @@ const Cart = () => {
       <div>
         <div>Your Cart</div>
         <div>Summary</div>
+        {/* total item kitn hue hai vo cart ki length se pta chl jaengy */}
         <p><span>Total Items : {cart.length}</span></p>
         <button>
           Checkout Now

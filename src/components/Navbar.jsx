@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
+
 const currentState = useSelector ( (state)=> state)
 
 const noOfitemAddedTocart = currentState.cart.length;
@@ -17,10 +18,11 @@ const noOfitemAddedTocart = currentState.cart.length;
             <NavLink to="/">
             <p>Home</p>
             </NavLink>
-            <NavLink to="/cart">
-            
+
+
+            <NavLink to="/cart">           
             <div>
-            <span>{currentState.cart.length}</span>
+            <span>{noOfitemAddedTocart}</span>
               <FaShoppingCart >
               </FaShoppingCart>
             </div>
