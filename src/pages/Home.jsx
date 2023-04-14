@@ -20,7 +20,9 @@ const Home = () => {
     }
     catch(error){
       console.log("error hai")
+      setPosts([]);
     }
+    setLoading(false);
   }
 
   useEffect( ()=>{

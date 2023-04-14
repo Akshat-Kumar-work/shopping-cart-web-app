@@ -1,8 +1,14 @@
 import {FaShoppingCart} from "react-icons/fa"
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 
+
 const Navbar = () => {
+const currentState = useSelector ( (state)=> state)
+
+const noOfitemAddedTocart = currentState.cart.length;
+
   return <div className="flex flex-row  justify-between">
             <NavLink to="/">
             <img  width="15%" height="15%" src="/logo.avif"/>
@@ -12,8 +18,11 @@ const Navbar = () => {
             <p>Home</p>
             </NavLink>
             <NavLink to="/cart">
+            
             <div>
-              <FaShoppingCart className=" "></FaShoppingCart>
+            <span>{currentState.cart.length}</span>
+              <FaShoppingCart >
+              </FaShoppingCart>
             </div>
             </NavLink>
             

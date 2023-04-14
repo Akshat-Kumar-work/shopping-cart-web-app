@@ -1,6 +1,6 @@
 import {RiDeleteBin6Fill} from "react-icons/ri"
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { remove} from "../redux/Slices/CartSlice";
 
 
@@ -9,7 +9,7 @@ const CartItem = ({item , itemIndex}) => {
 
   const removefromcart = ()=>{
     dispatch(remove(item.id));
-    toast.success("Item removed from cart")
+    toast.error("Item removed from cart")
   }
   return (<div>
     <div>
